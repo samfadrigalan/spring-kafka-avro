@@ -1,4 +1,4 @@
 kafka:
-  bootstrap-servers: 165.227.118.230:9092
+  bootstrap-servers: localhost:9092
   topic:
-    avro: avro.t
+    avro: TestTopic

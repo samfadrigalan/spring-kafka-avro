@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import example.avro.User;
+
 @RestController
 @RequestMapping("api/v1/test")
 public class TestController {
@@ -24,6 +26,9 @@ public class TestController {
     @ApiOperation(value = "Send Message")
     @GetMapping
     public String sendMessage() {
+        User user = User.newBuilder().setName("John Doe").setFavoriteColor("green")
+                .setFavoriteNumber(null).build();
+        sender.send(user);
         return "Hello";
     }
 }
