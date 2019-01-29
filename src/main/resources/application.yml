@@ -1,4 +1,4 @@
 kafka:
   bootstrap-servers: 165.227.118.230:9092
   topic:
-    avro: Topic1
+    avro: StudentActivity

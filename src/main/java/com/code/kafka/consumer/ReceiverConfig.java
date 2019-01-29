@@ -15,7 +15,8 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
 import com.code.kafka.serializer.AvroDeserializer;
 
-import example.avro.User;
+import com.rishav.avro.StudentActivity;
+
 
 @Configuration
 @EnableKafka
@@ -36,14 +37,14 @@ public class ReceiverConfig {
   }
 
   @Bean
-  public ConsumerFactory<String, User> consumerFactory() {
+  public ConsumerFactory<String, StudentActivity> consumerFactory() {
     return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(),
-        new AvroDeserializer<>(User.class));
+        new AvroDeserializer<>(StudentActivity.class));
   }
 
   @Bean
-  public ConcurrentKafkaListenerContainerFactory<String, User> kafkaListenerContainerFactory() {
-    ConcurrentKafkaListenerContainerFactory<String, User> factory =
+  public ConcurrentKafkaListenerContainerFactory<String, StudentActivity> kafkaListenerContainerFactory() {
+    ConcurrentKafkaListenerContainerFactory<String, StudentActivity> factory =
         new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory());
 

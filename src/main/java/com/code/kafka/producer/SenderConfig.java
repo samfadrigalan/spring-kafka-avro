@@ -14,7 +14,7 @@ import org.springframework.kafka.core.ProducerFactory;
 
 import com.code.kafka.serializer.AvroSerializer;
 
-import example.avro.User;
+import com.rishav.avro.StudentActivity;
 
 @Configuration
 public class SenderConfig {
@@ -34,12 +34,12 @@ public class SenderConfig {
   }
 
   @Bean
-  public ProducerFactory<String, User> producerFactory() {
+  public ProducerFactory<String, StudentActivity> producerFactory() {
     return new DefaultKafkaProducerFactory<>(producerConfigs());
   }
 
   @Bean
-  public KafkaTemplate<String, User> kafkaTemplate() {
+  public KafkaTemplate<String, StudentActivity> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 

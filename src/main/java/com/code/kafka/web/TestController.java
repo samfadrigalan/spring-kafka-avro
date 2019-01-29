@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import example.avro.User;
+import com.rishav.avro.*;
 
 @RestController
 @RequestMapping("api/v1/test")
@@ -26,9 +26,19 @@ public class TestController {
     @ApiOperation(value = "Send Message")
     @GetMapping
     public String sendMessage() {
-        User user = User.newBuilder().setName("John Doe").setFavoriteColor("green")
-                .setFavoriteNumber(null).build();
-        sender.send(user);
-        return "Hello";
+        Activity activity = Activity.newBuilder()
+                .setCourseId(123)
+                .setEnrollDate("20180804")
+                .setVerb("verb1")
+                .setResultScore(100.0)
+                .build();
+        StudentActivity studentActivity = StudentActivity.newBuilder()
+                .setId("id1")
+                .setName("John Doe")
+                .setUniversityId(345)
+                .setCourseDetails(activity)
+                .build();
+        this.sender.send(studentActivity);
+        return "hello";
     }
 }

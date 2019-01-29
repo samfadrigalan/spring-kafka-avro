@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 
-import example.avro.User;
+import com.rishav.avro.StudentActivity;
 
 public class Receiver {
 
@@ -19,8 +19,8 @@ public class Receiver {
   }
 
   @KafkaListener(topics = "${kafka.topic.avro}")
-  public void receive(User user) {
-    LOGGER.info("received user='{}'", user.toString());
+  public void receive(StudentActivity studentActivity) {
+    LOGGER.info("received student activity='{}'", studentActivity.toString());
     latch.countDown();
   }
 }

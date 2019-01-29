@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.code.kafka.consumer.Receiver;
 import com.code.kafka.producer.Sender;
 
-import example.avro.User;
+import com.rishav.avro.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -49,8 +49,18 @@ public class ApplicationTest {
 
   @Test
   public void testReceiver() throws Exception {
-    User user = User.newBuilder().setName("John Doe").setFavoriteColor("green")
-        .setFavoriteNumber(null).build();
+    Activity activity = Activity.newBuilder()
+                                  .setCourseId(123)
+                                  .setEnrollDate("20180804")
+                                  .setVerb("verb1")
+                                  .setResultScore(100.0)
+                                  .build();
+    StudentActivity user = StudentActivity.newBuilder()
+                                  .setId("id1")
+                                  .setName("John Doe")
+                                  .setUniversityId(345)
+                                  .setCourseDetails(activity)
+                                  .build();
     sender.send(user);
 
     receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);

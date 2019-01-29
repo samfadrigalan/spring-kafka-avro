@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 
-import example.avro.User;
+import com.rishav.avro.StudentActivity;
 
 public class Sender {
 
@@ -16,10 +16,10 @@ public class Sender {
   private String avroTopic;
 
   @Autowired
-  private KafkaTemplate<String, User> kafkaTemplate;
+  private KafkaTemplate<String, StudentActivity> kafkaTemplate;
 
-  public void send(User user) {
-    LOGGER.info("sending user='{}'", user.toString());
-    kafkaTemplate.send(avroTopic, user);
+  public void send(StudentActivity studentActivity) {
+    LOGGER.info("sending student activity='{}'", studentActivity.toString());
+    kafkaTemplate.send(avroTopic, studentActivity);
   }
 }
