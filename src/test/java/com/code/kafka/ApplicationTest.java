@@ -19,7 +19,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.code.kafka.consumer.Receiver;
 import com.code.kafka.producer.Sender;
 
-import com.rishav.avro.*;
+import com.rishav.avro.StudentActivity;
+import com.rishav.avro.Activity;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
