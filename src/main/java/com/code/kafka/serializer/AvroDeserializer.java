@@ -1,4 +1,4 @@
-package com.codenotfound.kafka.serializer;
+package com.code.kafka.serializer;
 
 import java.util.Arrays;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.codenotfound.kafka.config;
+package com.code.kafka.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

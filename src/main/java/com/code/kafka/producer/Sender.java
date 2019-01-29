@@ -1,4 +1,4 @@
-package com.codenotfound.kafka.producer;
+package com.code.kafka.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

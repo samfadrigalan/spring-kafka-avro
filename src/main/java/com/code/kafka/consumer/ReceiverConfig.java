@@ -1,4 +1,4 @@
-package com.codenotfound.kafka.consumer;
+package com.code.kafka.consumer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
-import com.codenotfound.kafka.serializer.AvroDeserializer;
+import com.code.kafka.serializer.AvroDeserializer;
 
 import example.avro.User;
 

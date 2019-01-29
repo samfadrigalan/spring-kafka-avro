@@ -1,4 +1,4 @@
-package com.codenotfound.kafka.serializer;
+package com.code.kafka.serializer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

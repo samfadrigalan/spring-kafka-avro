@@ -1,4 +1,4 @@
-package com.codenotfound.kafka;
+package com.code.kafka;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,14 +16,14 @@ import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.codenotfound.kafka.consumer.Receiver;
-import com.codenotfound.kafka.producer.Sender;
+import com.code.kafka.consumer.Receiver;
+import com.code.kafka.producer.Sender;
 
 import example.avro.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringKafkaApplicationTest {
+public class ApplicationTest {
 
   @Autowired
   private Sender sender;

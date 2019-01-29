@@ -1,7 +1,7 @@
-package com.codenotfound.kafka.web;
+package com.code.kafka.web;
 
-import com.codenotfound.kafka.consumer.Receiver;
-import com.codenotfound.kafka.producer.Sender;
+import com.code.kafka.consumer.Receiver;
+import com.code.kafka.producer.Sender;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
