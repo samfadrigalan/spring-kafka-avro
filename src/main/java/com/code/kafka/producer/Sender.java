@@ -20,6 +20,6 @@ public class Sender {
 
   public void send(StudentActivity studentActivity) {
     LOGGER.info("sending student activity='{}'", studentActivity.toString());
-    kafkaTemplate.send(avroTopic, studentActivity);
+    kafkaTemplate.send(avroTopic, "key1", studentActivity);
   }
 }

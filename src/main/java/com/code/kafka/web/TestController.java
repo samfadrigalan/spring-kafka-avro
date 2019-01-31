@@ -26,25 +26,6 @@ public class TestController {
         this.receiver = receiver;
     }
 
-    @ApiOperation(value = "Send Message")
-    @GetMapping(path = "sendMessage")
-    public String sendMessage() {
-        Activity activity = Activity.newBuilder()
-                .setCourseId(123)
-                .setEnrollDate("20180804")
-                .setVerb("verb1")
-                .setResultScore(100.0)
-                .build();
-        StudentActivity studentActivity = StudentActivity.newBuilder()
-                .setId("id1")
-                .setName("John Doe")
-                .setUniversityId(345)
-                .setCourseDetails(activity)
-                .build();
-        this.sender.send(studentActivity);
-        return "hello";
-    }
-
     @ApiOperation(value = "Post Message")
     @PostMapping(path = "postMessage")
     public String postMessage(@Valid @RequestBody StudentActivityDTO studentActivityDTO) {

@@ -21,7 +21,15 @@
     <java.version>1.8</java.version>
     <avro.version>1.8.2</avro.version>
     <springfox.version>2.9.2</springfox.version>
+    <confluent.version>3.0.0</confluent.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>confluent</id>
+      <url>http://packages.confluent.io/maven/</url>
+    </repository>
+  </repositories>
 
   <dependencies>
     <!-- spring-boot -->
@@ -65,6 +73,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!--confluent -->
+    <dependency>
+      <groupId>io.confluent</groupId>
+      <artifactId>kafka-avro-serializer</artifactId>
+      <version>${confluent.version}</version>
     </dependency>
   </dependencies>
 
