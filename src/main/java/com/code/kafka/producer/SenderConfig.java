@@ -13,6 +13,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
 import com.rishav.avro.StudentActivity;
+import com.dumbo.avro.People;
 
 @Configuration
 public class SenderConfig {
@@ -37,12 +38,12 @@ public class SenderConfig {
   }
 
   @Bean
-  public ProducerFactory<String, StudentActivity> producerFactory() {
+  public ProducerFactory<String, People> producerFactory() {
     return new DefaultKafkaProducerFactory<>(producerConfigs());
   }
 
   @Bean
-  public KafkaTemplate<String, StudentActivity> kafkaTemplate() {
+  public KafkaTemplate<String, People> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 

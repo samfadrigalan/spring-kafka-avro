@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 
 import com.rishav.avro.StudentActivity;
+import com.dumbo.avro.People;
 
 public class Receiver {
 
@@ -20,8 +21,8 @@ public class Receiver {
   }
 
   @KafkaListener(topics = "${kafka.topic.avro}")
-  public void receive(ConsumerRecord<String, StudentActivity> record) {
+  public void receive(ConsumerRecord<String, People> record) {
     String key = record.key();
-    LOGGER.info("received student activity, offset = {}, key = {}, value = {}", record.offset(), key, record.value());
+    LOGGER.info("received people, offset = {}, key = {}, value = {}", record.offset(), key, record.value());
   }
 }

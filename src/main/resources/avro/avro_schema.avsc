@@ -1,0 +1,10 @@
+{
+  "namespace": "com.dumno.avro",
+  "name": "People",
+  "type": "record",
+  "fields": [
+    {"name": "name", "type": "string"},
+    {"name": "age", "type": "int"},
+    {"name": "note", "type": ["string", "null"], "default": null}
+  ]
+}

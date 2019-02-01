@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 
 import com.rishav.avro.StudentActivity;
-
+import com.dumbo.avro.People;
 public class Sender {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Sender.class);
@@ -16,10 +16,10 @@ public class Sender {
   private String avroTopic;
 
   @Autowired
-  private KafkaTemplate<String, StudentActivity> kafkaTemplate;
+  private KafkaTemplate<String, People> kafkaTemplate;
 
-  public void send(StudentActivity studentActivity) {
-    LOGGER.info("sending student activity='{}'", studentActivity.toString());
-    kafkaTemplate.send(avroTopic, "key1", studentActivity);
+  public void send(People people) {
+    LOGGER.info("sending people='{}'", people.toString());
+    kafkaTemplate.send(avroTopic, "key1", people);
   }
 }
